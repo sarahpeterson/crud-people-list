@@ -1,18 +1,20 @@
 import React from 'react';
 
-export default ({ backgroundColor, text, color }) => (
+export default ({ backgroundColor, text, color, width, border, boxShadow }) => (
   <button
     style={{
-      width: 125,
-      height: 35,
-      borderRadius: 25,
+      width,
+      height: 45,
       borderColor: 'transparent',
       backgroundColor,
       color,
+      border,
+      boxShadow,
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
-      boxShadow: '1px 3px #ccc'
+      // boxShadow: '0px 6px 12px rgba(98, 77, 227, 0.3)',
+      borderRadius: 50
     }}
   >
     <p

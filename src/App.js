@@ -8,7 +8,7 @@ function App() {
   const [add, addPerson] = useState(false);
   const [edit, editPerson] = useState(false);
   return (
-    <div style={{ backgroundColor: '#F4F7FC' }}>
+    <div style={{ backgroundColor: '#F4F7FC', height: '200vh' }}>
       <PeopleTable />
     </div>
   );

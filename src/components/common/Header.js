@@ -4,11 +4,11 @@ export default ({ headline, subHeadline }) => (
   <div>
     <p
       style={{
-        fontFmaily: 'Inter',
+        // fontFamily: 'Inter',
         fontStyle: 'normal',
         fontWeight: 500,
         fontSize: 26,
-        lineHeight: 31,
+        // lineHeight: 31,
         color: '#00234B'
       }}
     >

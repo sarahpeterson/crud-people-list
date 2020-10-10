@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from '../common/Button';
 
-export default ({ person }) => (
+export default ({ person, edit }) => (
   <div
     style={{
       boxShadow: '6px 6px 54px rgba(0, 0, 0, 0.05)',
@@ -76,6 +76,6 @@ export default ({ person }) => (
         {person.salary} per year
       </p>
     </div>
-    <Button text="Edit" backgroundColor="#fff" border="2px solid rgba(98, 77, 227, 0.3)" width={143} />
+    <Button btnClick={() => edit()} text="Edit" backgroundColor="#fff" border="2px solid rgba(98, 77, 227, 0.3)" width={143} />
   </div>
 )

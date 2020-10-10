@@ -6,11 +6,12 @@ import Account from '../account';
 import PeopleCount from '../person/peopleCount';
 import {people} from './peopleData';
 
-export default () => {
+export default ({ btnClick, edit }) => {
   const [newPeople, updatePeople] = useState(people)
   const listPeople = newPeople.map((p) => (
     <Person
       person={p}
+      edit={() => edit()}
     />
   ))
   return (
@@ -39,6 +40,7 @@ export default () => {
           border="transparent"
           color="#fff"
           width={181}
+          btnClick={() => btnClick()}
         />
       </div>
       <div

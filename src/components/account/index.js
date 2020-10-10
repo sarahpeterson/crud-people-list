@@ -5,7 +5,7 @@ export default ({ account }) => (
     style={{
       display: 'flex',
       justifyContent: 'flex-end',
-      alignItems: 'center',
+      // alignItems: 'center',
       flexDirection: 'row',
       // position: 'relative',
       // width: '100%',

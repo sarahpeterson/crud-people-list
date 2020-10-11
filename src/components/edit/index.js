@@ -5,12 +5,25 @@ import Header from '../common/Header';
 import Account from '../account';
 import PeopleCount from '../person/peopleCount';
 
-export default ({ btnClick, edit }) => {
-  const [newPerson, updatePeople] = useState()
-  const addEdit = edit ? 'Edit' : 'Add';
-  const fillEdit = edit ? 'Edit' : 'Fill out';
-  const newEmp = edit ? ' ' : 'new ';
-  const addSave = edit ? 'Save' : 'Add Employee';
+const editText = (editMode) => {
+  const addEdit = editMode ? 'Edit' : 'Add';
+  const fillEdit = editMode ? 'Edit' : 'Fill out';
+  const newEmp = editMode ? ' ' : 'new ';
+  const addSave = editMode ? 'Save' : 'Add Employee';
+  return { addEdit, fillEdit, newEmp, addSave }
+}
+
+export default ({ btnClick, edit, current, editing }) => {
+  const editMode = editing !== '';
+  const decideText = editText(editMode);
+  const checkEdit = editMode ? current.filter(c => c.id === editing) : null;
+  console.log('current', current, checkEdit)
+  const [newPerson, updatePeople] = useState(editMode ? checkEdit[0] : {});
+  const [name, updateName] = useState(editMode ? checkEdit[0].name : '');
+  const [bday, updateBday] = useState(editMode ? checkEdit[0].birthday : '');
+  const [title, updateTitle] = useState(editMode ? checkEdit[0].title : '');
+  const [country, updateCountry] = useState(editMode ? checkEdit[0].country : '');
+  const [salary, updateSalary] = useState(editMode ? checkEdit[0].salary : '');
   return (
     <div
       style={{
@@ -45,8 +58,8 @@ export default ({ btnClick, edit }) => {
         }}
       >
         <Header
-          headline={`${addEdit} a new employee`}
-          subHeadline={`${fillEdit} the information of your ${newEmp}employee.`}
+          headline={`${decideText.addEdit} a new employee`}
+          subHeadline={`${decideText.fillEdit} the information of your ${decideText.newEmp}employee.`}
         />
         <div
           style={{
@@ -76,6 +89,12 @@ export default ({ btnClick, edit }) => {
                 fontSize: 20
               }}
               placeholder="e.g. Jane Doe"
+              value={name}
+              onChange={(e) => {
+                console.log('ann', e.target.value)
+                updateName(e.target.value);
+                updatePeople({...newPerson, name: e.target.value })
+              }}
             />
             <p
               style={{
@@ -102,6 +121,11 @@ export default ({ btnClick, edit }) => {
                 fontSize: 20
               }}
               placeholder="e.g. 17/02/1990"
+              value={bday}
+              onChange={(e) => {
+                updateBday(e.target.value);
+                updatePeople({...newPerson, birthday: e.target.value })
+              }}
             />
             <p
               style={{
@@ -128,6 +152,11 @@ export default ({ btnClick, edit }) => {
                 fontSize: 20
               }}
               placeholder="e.g. Product manager"
+              value={title}
+              onChange={(e) => {
+                updateTitle(e.target.value);
+                updatePeople({...newPerson, title: e.target.value })
+              }}
             />
             <p
               style={{
@@ -154,6 +183,11 @@ export default ({ btnClick, edit }) => {
                 fontSize: 20
               }}
               placeholder="Portugal"
+              value={country}
+              onChange={(e) => {
+                updateCountry(e.target.value);
+                updatePeople({...newPerson, country: e.target.value })
+              }}
             />
             <p
               style={{
@@ -180,6 +214,11 @@ export default ({ btnClick, edit }) => {
                 fontSize: 20
               }}
               placeholder="e.g. 50000"
+              value={salary}
+              onChange={(e) => {
+                updateSalary(e.target.value);
+                updatePeople({...newPerson, salary: e.target.value });
+              }}
             />
             <p
               style={{
@@ -210,12 +249,17 @@ export default ({ btnClick, edit }) => {
           />
           <Button
             backgroundColor="#624DE3"
-            text={addSave}
+            text={decideText.addSave}
             boxShadow="0px 6px 12px rgba(98, 77, 227, 0.3)"
             border="transparent"
             color="#fff"
             width={154}
-            btnClick={() => btnClick()}
+            btnClick={() => {
+              const newID = !editMode ? newPerson["id"] = current[current.length - 1].id + 1 : 0
+              const list = editMode ? current.splice(editing, 1, newPerson) : current.push(newPerson)
+              // current.splice(editing, newPerson, current)
+              btnClick(current)
+            }}
           />
         </div>
       </div>

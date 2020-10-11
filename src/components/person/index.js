@@ -76,6 +76,6 @@ export default ({ person, edit }) => (
         {person.salary} per year
       </p>
     </div>
-    <Button btnClick={() => edit()} text="Edit" backgroundColor="#fff" border="2px solid rgba(98, 77, 227, 0.3)" width={143} />
+    <Button btnClick={() => edit(person.id)} text="Edit" backgroundColor="#fff" border="2px solid rgba(98, 77, 227, 0.3)" width={143} />
   </div>
 )

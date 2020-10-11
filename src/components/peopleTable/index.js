@@ -6,12 +6,13 @@ import Account from '../account';
 import PeopleCount from '../person/peopleCount';
 import {people} from './peopleData';
 
-export default ({ btnClick, edit }) => {
-  const [newPeople, updatePeople] = useState(people)
-  const listPeople = newPeople.map((p) => (
+export default ({ btnClick, edit, newPeople }) => {
+  const [peopleList, updatePeople] = useState(newPeople)
+  console.log('people list', peopleList)
+  const listPeople = peopleList.map((p) => (
     <Person
       person={p}
-      edit={() => edit()}
+      edit={(id) => edit(id)}
     />
   ))
   return (
@@ -32,7 +33,7 @@ export default ({ btnClick, edit }) => {
         <Header
           headline="People"
         />
-        <PeopleCount count={newPeople.length} />
+        <PeopleCount count={peopleList.length} />
         <Button
           backgroundColor="#624DE3"
           text="Add Employee"

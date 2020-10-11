@@ -3,14 +3,15 @@ import Person from '../person';
 import Button from '../common/Button';
 import Header from '../common/Header';
 import Account from '../account';
-import PeopleCount from '../person/peopleCount';
-import {people} from './peopleData';
+import PeopleCount from '../person/PeopleCount';
+import './styles.css';
 
 export default ({ btnClick, edit, newPeople }) => {
-  const [peopleList, updatePeople] = useState(newPeople)
-  console.log('people list', peopleList)
+  const [peopleList, updatePeople] = useState([]);
+  if (peopleList.length === 0) updatePeople(newPeople);
   const listPeople = peopleList.map((p) => (
     <Person
+      key={p.id}
       person={p}
       edit={(id) => edit(id)}
     />
@@ -20,16 +21,7 @@ export default ({ btnClick, edit, newPeople }) => {
       <Account
         account={{ name: 'Julie Howard', type: 'Admin' }}
       />
-      <div
-        style={{
-          flexDirection: 'row',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          marginLeft: 10,
-          marginRight: 10
-        }}
-      >
+      <div className="table-container">
         <Header
           headline="People"
         />
@@ -44,15 +36,8 @@ export default ({ btnClick, edit, newPeople }) => {
           btnClick={() => btnClick()}
         />
       </div>
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          flexDirection: 'column'
-        }}
-      >
-      {listPeople}
+      <div className="people-list">
+        {listPeople}
       </div>
     </div>
   )

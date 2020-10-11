@@ -1,25 +1,9 @@
 import React from 'react';
+import './styles.css';
 
 export default ({ count }) => (
-  <div
-    style={{
-      display: 'flex',
-      justifyContent: 'flex-start',
-      alignItems: 'center',
-      position: 'absolute',
-      left: '7%',
-      top: '11%'
-    }}
-  >
-    <p
-      style={{
-        margin: 0,
-        padding: 0,
-        fontWeight: 500,
-        fontStyle: 'normal',
-        fontSize: 13,
-      }}
-    >
+  <div className="count-container">
+    <p className="count-text">
       {count} employees
     </p>
   </div>

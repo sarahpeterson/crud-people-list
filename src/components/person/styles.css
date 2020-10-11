@@ -1,0 +1,57 @@
+/* person */
+.person-container {
+  box-shadow: 6px 6px 54px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 1078px;
+  height: 112px;
+  margin-top: 20px;
+  padding-right: 10px;
+}
+.person-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+.person-name {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  color: #00234B;
+  margin: 0px;
+  padding: 0px;
+}
+.person-birthday {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  color: #778CA3;
+  margin: 0px;
+  padding: 0px;
+}
+.person-spacing {
+  flex: 1
+}
+
+/* people count */
+.count-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: absolute;
+  left: 7%;
+  top: 11%;
+}
+.count-text {
+  margin: 0px;
+  padding: 0px;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 13px;
+}

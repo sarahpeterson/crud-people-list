@@ -4,3 +4,14 @@
   min-height: 100vh;
   /* height: 200vh; */
 }
+:root {
+  --blue: #00234B;
+  --light-blue: #525F7F;
+  --main-purple: #624DE3;
+  --light-purple: #F9FAFF;
+  --grey: rgba(0, 0, 0, 0.05);
+  --white: #fff;
+  --light-grey: #E5E5E5;
+  --orange: #FFE8DF;
+  --puple-border: 2px solid rgba(98, 77, 227, 0.3);
+}

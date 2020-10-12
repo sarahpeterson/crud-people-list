@@ -15,6 +15,10 @@ function App() {
           edit={() => editPerson(true)}
           editing={edit}
           current={newList}
+          cancel={() => {
+            addPerson(false);
+            editPerson('')
+          }}
           btnClick={(newPerson) => {
             updatePeople(newPerson)
             addPerson(false);

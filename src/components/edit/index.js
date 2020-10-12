@@ -21,7 +21,7 @@ const updateCurrent = (newPerson, current, editMode, editing) => {
   } return null;
 }
 
-export default ({ btnClick, current, editing }) => {
+export default ({ btnClick, current, editing, cancel }) => {
   const editMode = editing !== '';
   const decideText = editText(editMode);
   const checkEdit = editMode ? current.filter(c => c.id === editing) : null;
@@ -103,6 +103,7 @@ export default ({ btnClick, current, editing }) => {
             backgroundColor="#fff"
             border="2px solid rgba(98, 77, 227, 0.3)"
             width={154}
+            btnClick={() => cancel()}
           />
           <Button
             backgroundColor="#624DE3"

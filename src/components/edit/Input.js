@@ -13,11 +13,12 @@ export default ({ labelTxt, inputValue, btnClick, inputTxt, placeholder }) => {
   }
   return (
     <div className="input-container">
-      <label className="input-label">
+      <label htmlFor={labelTxt} className="input-label">
         {labelTxt}
       </label>
       <input
         data-testid="people-input"
+        id={labelTxt}
         className="input-border"
         placeholder={placeholder}
         value={inputValue}

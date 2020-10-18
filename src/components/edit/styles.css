@@ -8,13 +8,11 @@
 .edit-main {
   flex-direction: column;
   display: flex;
-  position: absolute;
-  width: 1078px;
-  height: 760px;
-  top: 120px;
+  width: 90%;
   border-radius: 10px;
   background-color: var(--white);
   box-shadow: 6px 6px 54px var(--grey);
+  margin-top: 20px;
 }
 .input-section {
   display: flex;
@@ -46,6 +44,11 @@
   height: 30px;
   font-size: 20px;
 }
+@media only screen and (max-width: 900px) {
+  .input-border {
+    width: 399px;
+  }
+}
 .input-text {
   font-size: 13px;
 }
@@ -56,6 +59,9 @@
   margin-top: 40px;
   align-items: center;
   background-color: var(--light-purple);
-  width: 1078px;
   height: 104px;
+}
+.input-btn {
+  margin-left: 10px;
+  margin-right: 10px;
 }

@@ -3,8 +3,17 @@ import './styles.css';
 
 export default ({ btnClick, value }) => {
   return (
-    <select className="input-border" onChange={(e) => btnClick(e)}>
-      {value !== '' ? <option value={value}>{value}</option> : null}
+    <select
+      data-testid="select"
+      style={{ marginBottom: 10 }}
+      className="input-border"
+      onChange={(e) => btnClick(e)}
+    >
+      {
+        value !== '' ?
+        <option defaultValue value={value}>{value}</option> :
+        <option defaultValue value="Select an option">Select an option</option>
+      }
       <option value="Afghanistan">Afghanistan</option>
       <option value="Åland Islands">Åland Islands</option>
       <option value="Albania">Albania</option>
@@ -240,7 +249,7 @@ export default ({ btnClick, value }) => {
       <option value="Ukraine">Ukraine</option>
       <option value="United Arab Emirates">United Arab Emirates</option>
       <option value="United Kingdom">United Kingdom</option>
-      <option value="United States">United States</option>
+      <option data-testid="val1" value="United States">United States</option>
       <option value="United States Minor Outlying Islands">United States Minor Outlying Islands</option>
       <option value="Uruguay">Uruguay</option>
       <option value="Uzbekistan">Uzbekistan</option>

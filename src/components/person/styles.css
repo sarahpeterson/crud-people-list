@@ -1,24 +1,7 @@
-
 /* person */
-.person-container {
-  box-shadow: 6px 6px 54px var(--grey);
-  border-radius: 10px;
-  background-color: #fff;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  width: 95%;
-  height: 112px;
-  margin-top: 20px;
-  padding-right: 10px;
-}
 .person-data {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex: 1;
+  font-size: 16px;
+  text-align: left;
 }
 .person-name {
   font-style: normal;
@@ -27,6 +10,7 @@
   color: var(--blue);
   margin: 0px;
   padding: 0px;
+  text-align: left;
 }
 .person-birthday {
   font-style: normal;
@@ -35,24 +19,13 @@
   color: #778CA3;
   margin: 0px;
   padding: 0px;
+  text-align: left;
 }
-.person-spacing {
-  flex: 1
+@media only screen and (max-width: 900px) {
+  .person-birthday {
+    text-align: center;
+  }
 }
-
-/* people count */
-.count-container {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  position: absolute;
-  left: 7%;
-  top: 11%;
-}
-.count-text {
-  margin: 0px;
-  padding: 0px;
-  font-weight: 500;
-  font-style: normal;
+.salary-year {
   font-size: 13px;
 }

@@ -1,68 +1,53 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ## Available Scripts
 
-In the project directory, you can run:
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-### `yarn start`
+To run the app, navigate to the project directory `crud-people-list`, and run:
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### `yarn start` or `npm start`
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+This runs the app in the development mode.<br />
+Your browser will probably open on its own. If it doesn't open
+[http://localhost:3000](http://localhost:3000) to view the app.
 
-### `yarn test`
+This app was tested in Chrome and will look/work the best in that browser.
+
+### `yarn test` or `npm test`
 
 Launches the test runner in the interactive watch mode.<br />
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+## Project Details
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### CSS
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+I follow the official React recommendation to not use CSS classes across components, but
+instead I apply specific CSS to each module group. For example, the peopleTable component
+and it's related PeopleData component share one CSS file inside that folder.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This also makes it easy to switch back to JS if needed. For example, in the common component
+folder, the styles.js file contains normal styling, but it also imports props so that something
+like the background color of the button can be changed depending the style of a particular page.
 
-### `yarn eject`
+I also like to handle colors with variables throughout the app so that any adjustments can be quickly made.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### React
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+I have organized the app using functional components. I've kept all the main logic and it's handling
+in the App component. That is where I update the array of people as changes are made. I then
+pass the updates down to the other components where I handle displaying the new data.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+This structure allows for scalability. If the app ever needed to handle data through the use of an
+API, I could easily add an API call to the App component, replace the initial data in the hook
+used in the App component, and the data will still be passed to the child components without
+many changes especially to the UI.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Tests
 
-## Learn More
+I've written tests using the react testing library to check for what is shown when the app is
+in edit mode, when a new person has been added and when the full list of people should be shown.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+I also find it helpful when building an app, to have some test data available. I've included that
+in the PeopleData file. You can test the app with this array using the TEST variable declared
+in the App component. Set the variable to true to see a pre-set list of people or to FALSE to see the
+app work from a fresh start.

@@ -4,8 +4,11 @@ import PeopleTable from './components/peopleTable';
 import Edit from './components/edit';
 import { people } from './components/peopleTable/PeopleData';
 
+const TEST = true;
+const testing = TEST ? people : []
+
 function App() {
-  const [newList, updatePeople] = useState(people);
+  const [newList, updatePeople] = useState(testing);
   const [add, addPerson] = useState(false);
   const [edit, editPerson] = useState('');
   return (

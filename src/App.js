@@ -1,24 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import PeopleTable from './components/peopleTable';
+import Edit from './components/edit';
+import { people } from './components/peopleTable/PeopleData';
+
+const TEST = true;
+const testing = TEST ? people : []
 
 function App() {
+  const [newList, updatePeople] = useState(testing);
+  const [add, addPerson] = useState(false);
+  const [edit, editPerson] = useState('');
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {add || edit !== '' ?
+        <Edit
+          edit={() => editPerson(true)}
+          editing={edit}
+          current={newList}
+          cancel={() => {
+            addPerson(false);
+            editPerson('')
+          }}
+          btnClick={(newPerson) => {
+            updatePeople(newPerson)
+            addPerson(false);
+            editPerson('')
+          }}
+        /> :
+      <PeopleTable
+        newPeople={newList}
+        btnClick={() => addPerson(true)}
+        edit={(id) => editPerson(id)}
+      />}
     </div>
   );
 }

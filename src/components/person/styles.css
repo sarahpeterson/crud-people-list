@@ -1,0 +1,31 @@
+/* person */
+.person-data {
+  font-size: 16px;
+  text-align: left;
+}
+.person-name {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--blue);
+  margin: 0px;
+  padding: 0px;
+  text-align: left;
+}
+.person-birthday {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  color: #778CA3;
+  margin: 0px;
+  padding: 0px;
+  text-align: left;
+}
+@media only screen and (max-width: 900px) {
+  .person-birthday {
+    text-align: center;
+  }
+}
+.salary-year {
+  font-size: 13px;
+}

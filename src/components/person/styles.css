@@ -2,6 +2,8 @@
 .person-data {
   font-size: 16px;
   text-align: left;
+  font-weight: 400;
+  color: var(--light-blue)
 }
 .person-name {
   font-style: normal;
@@ -16,7 +18,7 @@
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
-  color: #778CA3;
+  color: var(--black);
   margin: 0px;
   padding: 0px;
   text-align: left;
@@ -28,4 +30,5 @@
 }
 .salary-year {
   font-size: 13px;
+  color: var(--black);
 }

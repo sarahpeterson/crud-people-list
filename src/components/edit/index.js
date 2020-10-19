@@ -3,7 +3,10 @@ import Button from '../common/Button';
 import Header from '../common/Header';
 import Account from '../account';
 import Input from './Input';
+import { colors } from '../common/colors';
 import './styles.css';
+
+const { mainPurple, white, purpleBorder } = colors;
 
 const editText = (editMode) => {
   const addEdit = editMode ? 'Edit' : 'Add';
@@ -116,9 +119,10 @@ export default ({ btnClick, current, editing, cancel }) => {
               <Button
                 text="Cancel"
                 disabled={false}
-                backgroundColor="#fff"
-                border="2px solid rgba(98, 77, 227, 0.3)"
+                backgroundColor={white}
+                border={purpleBorder}
                 width={154}
+                color={mainPurple}
                 btnClick={() => cancel()}
               />
             </div>
@@ -126,11 +130,11 @@ export default ({ btnClick, current, editing, cancel }) => {
               <Button
                 dataTestId="edit-save"
                 disabled={disabled}
-                backgroundColor="#624DE3"
+                backgroundColor={mainPurple}
                 text={decideText.addSave}
-                boxShadow="0px 6px 12px rgba(98, 77, 227, 0.3)"
+                boxShadow={purpleBorder}
                 border="transparent"
-                color="#fff"
+                color={white}
                 width={154}
                 btnClick={() => validate(newPerson, current, editMode, editing, btnClick)}
               />

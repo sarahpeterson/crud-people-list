@@ -34,6 +34,7 @@
 .input-label {
   display: block;
   font-size: 13px;
+  color: var(--black);
 }
 .input-border {
   border-bottom: 1.5px solid var(--main-purple);
@@ -43,6 +44,7 @@
   width: 599px;
   height: 30px;
   font-size: 20px;
+  color: var(--blue);
 }
 @media only screen and (max-width: 900px) {
   .input-border {
@@ -51,6 +53,7 @@
 }
 .input-text {
   font-size: 13px;
+  color: var(--blue);
 }
 .input-btn-contain {
   display: flex;
@@ -60,6 +63,8 @@
   align-items: center;
   background-color: var(--light-purple);
   height: 104px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 .input-btn {
   margin-left: 10px;

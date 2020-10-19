@@ -8,7 +8,7 @@ export default ({ account }) => (
       <p className="account-text">
         {account.name}
       </p>
-      <p className="account-text">
+      <p className="account-text" style={{ color: '#778CA3', textAlign: 'left' }}>
         {account.type}
       </p>
     </div>

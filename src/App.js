@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import PeopleTable from './components/peopleTable';
 import Edit from './components/edit';
-import { people } from './components/peopleTable/PeopleData';
+import { people } from './components/peopleTable/peopleData';
 
 const TEST = true;
 const testing = TEST ? people : []

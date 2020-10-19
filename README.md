@@ -2,9 +2,13 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-To run the app, navigate to the project directory `crud-people-list`, and run:
+To run the app, clone this repo with `git clone https://github.com/sarahpeterson/crud-people-list`.
 
-### `yarn start` or `npm start`
+Then, navigate to the project directory `crud-people-list`, and run:
+
+### `yarn install` or `npm install` to make sure you have the necessary libraries.
+
+### When that is complete, run `yarn start` or `npm start`
 
 This runs the app in the development mode.<br />
 Your browser will probably open on its own. If it doesn't open

@@ -4,7 +4,10 @@ import Button from '../common/Button';
 import Header from '../common/Header';
 import Account from '../account';
 import PeopleCount from './PeopleCount';
+import { colors } from '../common/colors';
 import './styles.css';
+
+const { white, purpleBorder, mainPurple } = colors;
 
 export default ({ btnClick, edit, newPeople }) => {
   const [peopleList, updatePeople] = useState([]);
@@ -30,39 +33,37 @@ export default ({ btnClick, edit, newPeople }) => {
         </div>
         <Button
           disabled={false}
-          backgroundColor="#624DE3"
+          backgroundColor={mainPurple}
           text="Add Employee"
-          boxShadow="0px 6px 12px rgba(98, 77, 227, 0.3)"
+          boxShadow={purpleBorder}
           border="transparent"
-          color="#fff"
+          color={white}
           width={181}
           btnClick={() => btnClick()}
         />
       </div>
-      <div>
-        <table>
-          <thead>
-            <tr>
-              <td data-testid="heading">
-                EMPLOYEE
-              </td>
-              <td>
-                JOB TITLE
-              </td>
-              <td>
-                COUNTRY
-              </td>
-              <td>
-                SALARY
-              </td>
-              <td></td>
-            </tr>
-          </thead>
-          <tbody>
-            {listPeople}
-          </tbody>
-        </table>
-      </div>
+      <table>
+        <thead>
+          <tr>
+            <td data-testid="heading">
+              EMPLOYEE
+            </td>
+            <td>
+              JOB TITLE
+            </td>
+            <td>
+              COUNTRY
+            </td>
+            <td>
+              SALARY
+            </td>
+            <td></td>
+          </tr>
+        </thead>
+        <tbody>
+          {listPeople}
+        </tbody>
+      </table>
     </div>
   )
 }

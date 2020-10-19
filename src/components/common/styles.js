@@ -1,3 +1,4 @@
+import { colors } from './colors';
 // button
 export const buttonStyles =
   (backgroundColor, color, width, border, boxShadow) => {
@@ -16,7 +17,9 @@ export const buttonStyles =
     }
     const buttonText = {
       margin: 0,
-      padding: 0
+      padding: 0,
+      fontSize: 16,
+      fontWeght: 500
     }
   return { buttonContainer, buttonText }
 }
@@ -27,13 +30,14 @@ export const headerStyles = () => {
     fontStyle: 'normal',
     fontWeight: 500,
     fontSize: 26,
-    color: '#00234B',
+    color: colors.blue,
     margin: 0,
     padding: 0
   }
   const subText = {
     marginTop: 10,
-    padding: 0
+    padding: 0,
+    color: colors.lightBlue,
   }
   return { headerText, subText }
 }

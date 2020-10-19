@@ -1,6 +1,9 @@
 import React from 'react';
 import Button from '../common/Button';
+import { colors } from '../common/colors';
 import './styles.css';
+
+const { mainPurple, purpleBorder, white } = colors;
 
 export default ({ person, edit }) => (
   <tr data-testid="person">
@@ -33,9 +36,10 @@ export default ({ person, edit }) => (
         disabled={false}
         btnClick={() => edit(person.id)}
         text="Edit"
-        backgroundColor="#fff"
-        border="2px solid rgba(98, 77, 227, 0.3)"
+        backgroundColor={white}
+        border={purpleBorder}
         boxShadow=""
+        color={mainPurple}
         width={143}
       />
     </td>
